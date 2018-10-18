@@ -1,7 +1,5 @@
 #!/usr/bin/groovy
-@Library('github.com/stakater/fabric8-pipeline-library@add-module-to-terraform')
-
-def dummy
+@Library('github.com/stakater/fabric8-pipeline-library@v2.8.0') _
 
 validateTerraformModules {
   
