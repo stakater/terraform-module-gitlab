@@ -3,6 +3,7 @@ resource "gitlab_project" "project" {
   namespace_id = "${var.group_id}"
   description = "${var.description}"
   visibility_level = "${var.visibility}" // can be private, internal, public
+  default_branch = "${var.default_branch}"
 }
 
 resource "gitlab_branch_protection" "project_master" {
