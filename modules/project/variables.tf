@@ -15,3 +15,7 @@ variable "visibility" {
 variable "enable_branch_protection" {
   default = false
 }
+
+variable "default_branch" {
+  default = "master"
+}
