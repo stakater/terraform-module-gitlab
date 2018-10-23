@@ -19,3 +19,7 @@ variable "enable_branch_protection" {
 variable "default_branch" {
   default = "master"
 }
+
+variable "webhook_url" {
+  default = ""
+}
