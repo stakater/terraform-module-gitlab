@@ -15,3 +15,11 @@ resource "gitlab_branch_protection" "project_master" {
 
   depends_on = ["gitlab_project.project"]
 }
+
+resource "gitlab_project_hook" "project_webhook" {
+  count = "${var.webhook_url == "" ? 0 : 1 }"
+  project = "${gitlab_project.project.id}"
+  url = "${var.webhook_url}"
+  push_events = true
+  merge_request_events = true
+}
