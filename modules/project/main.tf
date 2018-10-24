@@ -21,5 +21,5 @@ resource "gitlab_project_hook" "project_webhook" {
   project = "${gitlab_project.project.id}"
   url = "${var.webhook_url}"
   push_events = true
-  merge_request_events = true
+  merge_requests_events = true
 }
