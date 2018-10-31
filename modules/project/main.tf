@@ -17,9 +17,9 @@ resource "gitlab_branch_protection" "project_master" {
 }
 
 resource "gitlab_project_hook" "project_webhook" {
-  count = "${var.webhook_url == "" ? 0 : 1 }"
+  count = "${length(var.webhooks)}"
   project = "${gitlab_project.project.id}"
-  url = "${var.webhook_url}"
-  push_events = true
-  merge_requests_events = true
+  url = "${lookup(var.webhooks[count.index], "url", "")}"
+  push_events = "${lookup(var.webhooks[count.index], "push_events", false)}"
+  merge_requests_events = "${lookup(var.webhooks[count.index], "merge_requests_events", false)}"
 }

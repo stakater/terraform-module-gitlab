@@ -20,6 +20,7 @@ variable "default_branch" {
   default = "master"
 }
 
-variable "webhook_url" {
-  default = ""
+variable "webhooks" {
+  type = "list"
+  default = []
 }
