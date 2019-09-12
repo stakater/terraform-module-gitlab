@@ -4,6 +4,7 @@ resource "gitlab_group" "group" {
     path = "${var.path}"
     description = "${var.description}"
     visibility_level = "${var.visibility}"
+    parent_id = "${var.parent_id}"
 }
 
 resource "gitlab_group_membership" "group_membership" {
