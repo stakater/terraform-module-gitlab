@@ -15,4 +15,6 @@ variable "users" {
   default = []
 }
 
-variable "parent_id" {}
+variable "parent_id" {
+  default = ""
+}
