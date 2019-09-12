@@ -16,5 +16,5 @@ variable "users" {
 }
 
 variable "parent_id" {
-  default = ""
+  default = 0
 }
